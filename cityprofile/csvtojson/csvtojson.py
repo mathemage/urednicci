@@ -2,7 +2,10 @@ import csv
 import json
 
 
-# Read CSV File
+def pretty_json(json_data):
+    return json.dumps(json_data, sort_keys=False, indent=2, separators=(',', ': '))
+
+
 def read_csv_file(file):
     csv_rows = []
     with open(file) as csvfile:
@@ -13,7 +16,10 @@ def read_csv_file(file):
     return csv_rows
 
 
-# Convert csv data into json and write it
-def write_json_file(data, json_file):
+def write_json_file(csv_rows, json_file):
     with open(json_file, "w") as f:
-        f.write(json.dumps(data, sort_keys=False, indent=2, separators=(',', ': ')))
+        f.write(pretty_json(csv_rows))
+
+
+def get_json_from_csv(csv_rows):
+    return pretty_json(csv_rows)
