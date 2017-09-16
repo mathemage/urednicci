@@ -1,9 +1,10 @@
 #!/usr/bin/python
 # based on http://www.idiotinside.com/2015/09/18/csv-json-pretty-print-python/
 
-import sys, getopt
-import csv
-import json
+import getopt
+import sys
+
+from cityprofile.csvtojson.csvtojson import read_csv_file, write_json_file
 
 
 # Get Command Line Arguments
@@ -23,25 +24,8 @@ def main(argv):
             input_file = arg
         elif opt in ("-o", "--ofile"):
             output_file = arg
-    read_csv(input_file, output_file, format)
-
-
-# Read CSV File
-def read_csv(file, json_file, format):
-    csv_rows = []
-    with open(file) as csvfile:
-        reader = csv.DictReader(csvfile)
-        title = reader.fieldnames
-        for row in reader:
-            csv_rows.extend([{title[i]: row[title[i]] for i in range(len(title))}])
-        write_json(csv_rows, json_file)
-
-
-# Convert csv data into json and write it
-def write_json(data, json_file):
-    with open(json_file, "w") as f:
-        # f.write(json.dumps(data))
-        f.write(json.dumps(data, sort_keys=False, indent=2, separators=(',', ': ')))
+    csv_rows = read_csv_file(input_file)
+    write_json_file(csv_rows, output_file)
 
 
 if __name__ == "__main__":
