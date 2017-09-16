@@ -15,5 +15,6 @@ def lookup_city(city_name):
         filepath = "{}/{}".format(RESOURCES_DIR, dataset)
         print('Exploring "{}" ...'.format(filepath))
         csv_content = read_csv_file(filepath)
-        json_of_dataset = {dataset: csv_content}
+        filtered_content = [csv_row for csv_row in csv_content if csv_row['uzemi_txt'] == city_name]
+        json_of_dataset = {dataset: filtered_content}
         print(get_pretty_json_string(json_of_dataset))

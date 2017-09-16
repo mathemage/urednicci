@@ -3,7 +3,7 @@ import json
 
 
 def get_pretty_json_string(json_data):
-    return json.dumps(json_data, sort_keys=False, indent=2, separators=(',', ': '))
+    return json.dumps(json_data, sort_keys=False, indent=2, separators=(',', ': '), ensure_ascii=False)
 
 
 def read_csv_file(filename):
