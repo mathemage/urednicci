@@ -7,9 +7,12 @@ from cityprofile.csvtojson.csvtojson import read_csv_file, get_pretty_json_strin
 RESOURCES_DIR = "../resources"
 
 
-def check_with_misc_filters(csv_row):
-    # print("csv_row['uzemiz_cis'] == {}".format(csv_row['uzemiz_cis']))
-    return csv_row['uzemiz_cis'] == ''
+def check_with_misc_filters(csv_row, filter_rules):
+    for column_name in filter_rules:
+        if csv_row[column_name] not in filter_rules[column_name]:
+            return False
+    return True
+    # return csv_row['uzemiz_cis'] == ''
 
 
 def lookup_city_in_dataset(city_name, csv_content, metadata):
@@ -18,13 +21,14 @@ def lookup_city_in_dataset(city_name, csv_content, metadata):
     city_column_name = metadata['city_column_name']
     chart_names = metadata['chart_names']
     chart_names_column_name = metadata['chart_names_column_name']
+    filter_rules = metadata['misc_filters']
     chart_xy_data = []
     for chart_name in chart_names:
         filtered_content = [{'x': csv_row[x_column_name], 'y': csv_row[y_column_name]}
                             for csv_row in csv_content
                             if csv_row[city_column_name] == city_name
                             and csv_row[chart_names_column_name] == chart_name
-                            and check_with_misc_filters(csv_row)]
+                            and check_with_misc_filters(csv_row, filter_rules)]
         chart_xy_data.append({chart_name: filtered_content})
     return chart_xy_data
 
@@ -37,7 +41,8 @@ def lookup_city(city_name):
             'y_column_name': 'hodnota',
             'city_column_name': 'uzemi_txt',
             'chart_names': ['Počet turistů', "Počet přenocování turistů"],
-            'chart_names_column_name': 'stapro_txt'
+            'chart_names_column_name': 'stapro_txt',
+            'misc_filters': {'uzemiz_cis': ['']}
         }
     }
 
