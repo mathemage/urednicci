@@ -40,18 +40,36 @@ def lookup_city(city_name):
             'x_column_name': 'rok',
             'y_column_name': 'hodnota',
             'city_column_name': 'uzemi_txt',
-            'chart_names': ['Počet turistů', "Počet přenocování turistů"],
             'chart_names_column_name': 'stapro_txt',
-            'misc_filters': {'uzemiz_cis': ['']}
+            'chart_names': ['Počet turistů', "Počet přenocování turistů"],
+            'misc_filters': {'uzemiz_cis': ['xxx']}
+            # 'misc_filters': {'uzemiz_cis': ['']}
         },
         'navstevnost-turistu.csv': {
             'x_column_name': 'rok',
             'y_column_name': 'hodnota',
             'city_column_name': 'uzemi_txt',
-            'chart_names': ['Počet turistů', "Počet přenocování turistů"],
             'chart_names_column_name': 'stapro_txt',
-            'misc_filters': {'uzemiz_cis': ['5898']}
-        }
+            'chart_names': ['Počet turistů', "Počet přenocování turistů"],
+            'misc_filters': {'uzemiz_cis': ['xxx']}
+            # 'misc_filters': {'uzemiz_cis': ['5898']}
+        },
+        'nadeje-doziti-2015.csv': {
+            'x_column_name': 'vek_txt',
+            'y_column_name': 'hodnota',
+            'city_column_name': 'vuzemi_txt',
+            'chart_names_column_name': 'pohlavi_txt',
+            'chart_names': ['muž', 'žena'],
+            'misc_filters': {}
+        },
+        'nadeje-doziti-2016.csv': {
+            'x_column_name': 'vek_txt',
+            'y_column_name': 'hodnota',
+            'city_column_name': 'vuzemi_txt',
+            'chart_names_column_name': 'pohlavi_txt',
+            'chart_names': ['muž', 'žena'],
+            'misc_filters': {}
+        },
     }
 
     for dataset in datasets:
