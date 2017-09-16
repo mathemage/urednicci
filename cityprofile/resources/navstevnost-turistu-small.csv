@@ -1,7 +1,8 @@
 ﻿"idhod","hodnota","duvernost","stapro_kod","stapro_txt","kat_cis","kat_kod","uzemiz_cis","uzemiz_kod","rok","uzemi_cis","uzemi_kod","uzemi_txt"
 "761095746","11643","verejny","2654","Počet turistů","154","1","5898","17","2012","65","2101","Benešov"
 "761218663","17462","verejny","2654","Počet turistů","154","1","5898","17","2012","65","2102","Beroun"
-"760997958","4802","verejny","2654","Počet turistů","154","1","5898","17","2012","65","2103","Brandýs nad Labem-Stará Boleslav"
+
+###
 
 "761235639","70","verejny","2654","Počet turistů","154","1","5898","17","2012","65","2104","Čáslav"
 "761100642","3379","verejny","2654","Počet turistů","154","1","86","203","2012","65","2104","Čáslav"
@@ -33,3 +34,37 @@
 "759569795","1853","verejny","2655","Počet přenocování turistů","154","1","5898","17","2016","65","2104","Čáslav"
 "759995997","14919","verejny","2655","Počet přenocování turistů","154","1","86","203","2016","65","2104","Čáslav"
 "759288161","16772","verejny","2655","Počet přenocování turistů","154","1","","","2016","65","2104","Čáslav"
+
+###
+
+
+"760997958","4802","verejny","2654","Počet turistů","154","1","5898","17","2012","65","2103","Brandýs nad Labem-Stará Boleslav"
+"761235675","20005","verejny","2654","Počet turistů","154","1","86","203","2012","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760678665","24807","verejny","2654","Počet turistů","154","1","","","2012","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760440666","10979","verejny","2655","Počet přenocování turistů","154","1","5898","17","2012","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760463748","67248","verejny","2655","Počet přenocování turistů","154","1","86","203","2012","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760427123","78227","verejny","2655","Počet přenocování turistů","154","1","","","2012","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760689332","4973","verejny","2654","Počet turistů","154","1","5898","17","2013","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760674154","19716","verejny","2654","Počet turistů","154","1","86","203","2013","65","2103","Brandýs nad Labem-Stará Boleslav"
+"761011037","24689","verejny","2654","Počet turistů","154","1","","","2013","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760804656","11547","verejny","2655","Počet přenocování turistů","154","1","5898","17","2013","65","2103","Brandýs nad Labem-Stará Boleslav"
+"761153916","58546","verejny","2655","Počet přenocování turistů","154","1","86","203","2013","65","2103","Brandýs nad Labem-Stará Boleslav"
+"761281820","70093","verejny","2655","Počet přenocování turistů","154","1","","","2013","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760975124","4068","verejny","2654","Počet turistů","154","1","5898","17","2014","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760698039","21748","verejny","2654","Počet turistů","154","1","86","203","2014","65","2103","Brandýs nad Labem-Stará Boleslav"
+"761243197","25816","verejny","2654","Počet turistů","154","1","","","2014","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760931251","8700","verejny","2655","Počet přenocování turistů","154","1","5898","17","2014","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760445116","61510","verejny","2655","Počet přenocování turistů","154","1","86","203","2014","65","2103","Brandýs nad Labem-Stará Boleslav"
+"761280013","70210","verejny","2655","Počet přenocování turistů","154","1","","","2014","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760978414","5761","verejny","2654","Počet turistů","154","1","5898","17","2015","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760691055","22370","verejny","2654","Počet turistů","154","1","86","203","2015","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760974311","28131","verejny","2654","Počet turistů","154","1","","","2015","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760475234","11923","verejny","2655","Počet přenocování turistů","154","1","5898","17","2015","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760915527","59828","verejny","2655","Počet přenocování turistů","154","1","86","203","2015","65","2103","Brandýs nad Labem-Stará Boleslav"
+"761282527","71751","verejny","2655","Počet přenocování turistů","154","1","","","2015","65","2103","Brandýs nad Labem-Stará Boleslav"
+"759472772","6173","verejny","2654","Počet turistů","154","1","5898","17","2016","65","2103","Brandýs nad Labem-Stará Boleslav"
+"759478911","22417","verejny","2654","Počet turistů","154","1","86","203","2016","65","2103","Brandýs nad Labem-Stará Boleslav"
+"759466744","28590","verejny","2654","Počet turistů","154","1","","","2016","65","2103","Brandýs nad Labem-Stará Boleslav"
+"759566505","12329","verejny","2655","Počet přenocování turistů","154","1","5898","17","2016","65","2103","Brandýs nad Labem-Stará Boleslav"
+"759288157","59086","verejny","2655","Počet přenocování turistů","154","1","86","203","2016","65","2103","Brandýs nad Labem-Stará Boleslav"
+"760144435","71415","verejny","2655","Počet přenocování turistů","154","1","","","2016","65","2103","Brandýs nad Labem-Stará Boleslav"
