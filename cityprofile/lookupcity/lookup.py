@@ -70,6 +70,14 @@ def lookup_city(city_name):
             'chart_names': ['muž', 'žena'],
             'misc_filters': {}
         },
+        'dokoncene-byty.csv': {
+            'x_column_name': 'rok',
+            'y_column_name': 'hodnota',
+            'city_column_name': 'vuzemi_txt',
+            'chart_names_column_name': 'tb_txt',
+            'chart_names': ['', 'Rodinný dům', 'Bytový dům'],
+            'misc_filters': {}
+        },
     }
 
     result_json = []
