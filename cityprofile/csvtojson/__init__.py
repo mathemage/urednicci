@@ -9,16 +9,18 @@ from cityprofile.csvtojson.csvtojson import read_csv_file, write_json_file
 
 # Get Command Line Arguments
 def main(argv):
+    help_message = '__init__.py -i <path to inputfile> -o <path to outputfile>'
+
     input_file = ''
     output_file = ''
     try:
-        opts, args = getopt.getopt(argv, "hi:o:f:", ["ifile=", "ofile=", "format="])
+        opts, args = getopt.getopt(argv, "hi:o:", ["ifile=", "ofile="])
     except getopt.GetoptError:
-        print('csv_json.py -i <path to inputfile> -o <path to outputfile> -f <dump/pretty>')
+        print(help_message)
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print('csv_json.py -i <path to inputfile> -o <path to outputfile> -f <dump/pretty>')
+            print(help_message)
             sys.exit()
         elif opt in ("-i", "--ifile"):
             input_file = arg
