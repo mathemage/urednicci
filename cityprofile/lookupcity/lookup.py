@@ -42,7 +42,6 @@ def lookup_city(city_name):
             'city_column_name': 'uzemi_txt',
             'chart_names_column_name': 'stapro_txt',
             'chart_names': ['Počet turistů', "Počet přenocování turistů"],
-            # 'misc_filters': {'uzemiz_cis': ['xxx']}
             'misc_filters': {'uzemiz_cis': ['']}
         },
         'navstevnost-turistu.csv': {
@@ -51,7 +50,6 @@ def lookup_city(city_name):
             'city_column_name': 'uzemi_txt',
             'chart_names_column_name': 'stapro_txt',
             'chart_names': ['Počet turistů', "Počet přenocování turistů"],
-            # 'misc_filters': {'uzemiz_cis': ['xxx']}
             'misc_filters': {'uzemiz_cis': ['5898']}
         },
         'nadeje-doziti-2015.csv': {
@@ -78,13 +76,13 @@ def lookup_city(city_name):
             'chart_names': ['', 'Rodinný dům', 'Bytový dům'],
             'misc_filters': {}
         },
-        '.csv': {
-            'x_column_name': 'rok',
-            'y_column_name': 'hodnota',
-            'city_column_name': 'vuzemi_txt',
-            'chart_names_column_name': 'tb_txt',
-            'chart_names': ['', 'Rodinný dům', 'Bytový dům'],
-            'misc_filters': {}
+        'duchody.csv': {
+            'x_column_name': 'referencni_obdobi',
+            'y_column_name': 'pocet_duchodcu',
+            'city_column_name': 'referencni_oblast',
+            'chart_names_column_name': 'druh_duchodu',
+            'chart_names': ['Sirotčí důchod', 'Plný invalidní důchod', 'Vdovské důchody celkem'],
+            'misc_filters': {'pohlavi': ['Žena']}
         },
     }
 
