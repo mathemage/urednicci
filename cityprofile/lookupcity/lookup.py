@@ -12,12 +12,12 @@ def check_with_misc_filters(csv_row):
     return csv_row['uzemiz_cis'] == ''
 
 
-def lookup_city_in_dataset(city_name, csv_content):
-    x_column_name = 'rok'
-    y_column_name = 'hodnota'
-    city_column_name = 'uzemi_txt'
-    chart_names = ['Počet turistů', "Počet přenocování turistů"]
-    chart_names_column_name = 'stapro_txt'
+def lookup_city_in_dataset(city_name, csv_content, metadata):
+    x_column_name = metadata['x_column_name']
+    y_column_name = metadata['y_column_name']
+    city_column_name = metadata['city_column_name']
+    chart_names = metadata['chart_names']
+    chart_names_column_name = metadata['chart_names_column_name']
     chart_xy_data = []
     for chart_name in chart_names:
         filtered_content = [{'x': csv_row[x_column_name], 'y': csv_row[y_column_name]}
@@ -37,6 +37,13 @@ def lookup_city(city_name):
         filepath = "{}/{}".format(RESOURCES_DIR, dataset)
         print('Exploring "{}" ...'.format(filepath))
         csv_content = read_csv_file(filepath)
-        chart_xy_data = lookup_city_in_dataset(city_name, csv_content)
+        metadata = {
+            'x_column_name': 'rok',
+            'y_column_name': 'hodnota',
+            'city_column_name': 'uzemi_txt',
+            'chart_names': ['Počet turistů', "Počet přenocování turistů"],
+            'chart_names_column_name': 'stapro_txt'
+        }
+        chart_xy_data = lookup_city_in_dataset(city_name, csv_content, metadata)
         json_of_dataset = {dataset: chart_xy_data}
         print(get_pretty_json_string(json_of_dataset))
