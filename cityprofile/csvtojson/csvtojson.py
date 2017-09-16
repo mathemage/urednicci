@@ -2,13 +2,13 @@ import csv
 import json
 
 
-def pretty_json(json_data):
+def get_pretty_json_string(json_data):
     return json.dumps(json_data, sort_keys=False, indent=2, separators=(',', ': '))
 
 
-def read_csv_file(file):
+def read_csv_file(filename):
     csv_rows = []
-    with open(file) as csvfile:
+    with open(filename) as csvfile:
         reader = csv.DictReader(csvfile)
         title = reader.fieldnames
         for row in reader:
@@ -16,10 +16,10 @@ def read_csv_file(file):
     return csv_rows
 
 
+def read_csv_file_with_filename_header(filename):
+    return {filename: read_csv_file(filename)}
+
+
 def write_json_file(csv_rows, json_file):
     with open(json_file, "w") as f:
-        f.write(pretty_json(csv_rows))
-
-
-def get_json_from_csv(csv_rows):
-    return pretty_json(csv_rows)
+        f.write(get_pretty_json_string(csv_rows))
