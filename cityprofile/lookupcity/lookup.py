@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 # based on http://www.idiotinside.com/2015/09/18/csv-json-pretty-print-python/
 import os
 
@@ -12,7 +13,6 @@ def check_with_misc_filters(csv_row, filter_rules):
         if csv_row[column_name] not in filter_rules[column_name]:
             return False
     return True
-    # return csv_row['uzemiz_cis'] == ''
 
 
 def lookup_city_in_dataset(city_name, csv_content, metadata):
@@ -24,12 +24,12 @@ def lookup_city_in_dataset(city_name, csv_content, metadata):
     filter_rules = metadata['misc_filters']
     chart_xy_data = []
     for chart_name in chart_names:
-        filtered_content = [{'x': csv_row[x_column_name], 'y': csv_row[y_column_name]}
+        filtered_content = [{'x': csv_row[x_column_name], 'y': float(csv_row[y_column_name])}
                             for csv_row in csv_content
                             if csv_row[city_column_name] == city_name
                             and csv_row[chart_names_column_name] == chart_name
                             and check_with_misc_filters(csv_row, filter_rules)]
-        chart_xy_data.append({chart_name: filtered_content})
+        chart_xy_data.append({'name': chart_name, 'values': filtered_content})
     return chart_xy_data
 
 
@@ -42,8 +42,8 @@ def lookup_city(city_name):
             'city_column_name': 'uzemi_txt',
             'chart_names_column_name': 'stapro_txt',
             'chart_names': ['Počet turistů', "Počet přenocování turistů"],
-            'misc_filters': {'uzemiz_cis': ['xxx']}
-            # 'misc_filters': {'uzemiz_cis': ['']}
+            # 'misc_filters': {'uzemiz_cis': ['xxx']}
+            'misc_filters': {'uzemiz_cis': ['']}
         },
         'navstevnost-turistu.csv': {
             'x_column_name': 'rok',
@@ -51,8 +51,8 @@ def lookup_city(city_name):
             'city_column_name': 'uzemi_txt',
             'chart_names_column_name': 'stapro_txt',
             'chart_names': ['Počet turistů', "Počet přenocování turistů"],
-            'misc_filters': {'uzemiz_cis': ['xxx']}
-            # 'misc_filters': {'uzemiz_cis': ['5898']}
+            # 'misc_filters': {'uzemiz_cis': ['xxx']}
+            'misc_filters': {'uzemiz_cis': ['5898']}
         },
         'nadeje-doziti-2015.csv': {
             'x_column_name': 'vek_txt',
@@ -72,10 +72,11 @@ def lookup_city(city_name):
         },
     }
 
+    result_json = []
+
     for dataset in datasets:
         filepath = "{}/{}".format(RESOURCES_DIR, dataset)
-        print('Exploring "{}" ...'.format(filepath))
         csv_content = read_csv_file(filepath)
         chart_xy_data = lookup_city_in_dataset(city_name, csv_content, metadatasets[dataset])
-        json_of_dataset = {dataset: chart_xy_data}
-        print(get_pretty_json_string(json_of_dataset))
+        result_json.append({dataset: chart_xy_data})
+    print(get_pretty_json_string(result_json))
