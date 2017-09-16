@@ -30,20 +30,21 @@ def lookup_city_in_dataset(city_name, csv_content, metadata):
 
 
 def lookup_city(city_name):
-    # print("Looking up the city of {}...".format(city_name))
     datasets = [csv_file for csv_file in os.listdir(RESOURCES_DIR) if csv_file.endswith(".csv")]
-
-    for dataset in datasets:
-        filepath = "{}/{}".format(RESOURCES_DIR, dataset)
-        print('Exploring "{}" ...'.format(filepath))
-        csv_content = read_csv_file(filepath)
-        metadata = {
+    metadatasets = {
+        'navstevnost-turistu-small.csv': {
             'x_column_name': 'rok',
             'y_column_name': 'hodnota',
             'city_column_name': 'uzemi_txt',
             'chart_names': ['Počet turistů', "Počet přenocování turistů"],
             'chart_names_column_name': 'stapro_txt'
         }
-        chart_xy_data = lookup_city_in_dataset(city_name, csv_content, metadata)
+    }
+
+    for dataset in datasets:
+        filepath = "{}/{}".format(RESOURCES_DIR, dataset)
+        print('Exploring "{}" ...'.format(filepath))
+        csv_content = read_csv_file(filepath)
+        chart_xy_data = lookup_city_in_dataset(city_name, csv_content, metadatasets[dataset])
         json_of_dataset = {dataset: chart_xy_data}
         print(get_pretty_json_string(json_of_dataset))
