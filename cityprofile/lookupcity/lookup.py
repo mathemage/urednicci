@@ -43,6 +43,14 @@ def lookup_city(city_name):
             'chart_names': ['Počet turistů', "Počet přenocování turistů"],
             'chart_names_column_name': 'stapro_txt',
             'misc_filters': {'uzemiz_cis': ['']}
+        },
+        'navstevnost-turistu.csv': {
+            'x_column_name': 'rok',
+            'y_column_name': 'hodnota',
+            'city_column_name': 'uzemi_txt',
+            'chart_names': ['Počet turistů', "Počet přenocování turistů"],
+            'chart_names_column_name': 'stapro_txt',
+            'misc_filters': {'uzemiz_cis': ['5898']}
         }
     }
 
